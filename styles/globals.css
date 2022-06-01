@@ -84,11 +84,16 @@ nav{
 }
 
 .main-lp{
-  background: url('/images/DAG_paper.png');
+  /* COMMENT OUT FOR VIDEO */
+  /* background: url('/images/DAG_paper.png'); */
+  /* background-size: 100% 100vh; */
+  /* background: url('/images/DAG_hpart.png'); */
+  position: relative;
   margin: -5rem 0;
   height: 100vh;
-  background-repeat: no-repeat;
-  background-size: 100% 100vh;
+  /* background-repeat: no-repeat;
+  background-size: 100% 70vh;
+  background-position: center; */
 }
 .main-h1{
   height: 50vh;
@@ -118,9 +123,9 @@ nav{
   margin-left: -5rem;
 }
 .lp-ape{
-  width: 40vh; 
-  height: 25rem;
-  position: relative;
+  display: block;
+  width: 40vh;
+  height: auto;
 }
 .dag-vid-mask{
   border: 1px solid #AC3335;
@@ -215,10 +220,13 @@ nav{
     width: 30vh; 
     height: 18rem;
   }
+  .main-lp{
+    background-size: 100% 60vh;
+  }
 }
 @media (max-height: 860px) {
   .main-lp{
-    background-size: 100% 95vh;
+    background-size: 100% 70vh;
   }
   .dag-vid-mask{
     mask-size: 100% 95vh;
@@ -260,6 +268,10 @@ nav{
     width: 25vh; 
     height: 15rem;
   }
+  .main-lp{
+    background-size: 100% 70vh; 
+  }
+  /* } REMOVE THIS FOR VIDEO */
 }
 
 @media (max-aspect-ratio: 16/9) {
@@ -268,3 +280,4 @@ nav{
       height: 100%;
   }
 }
+
