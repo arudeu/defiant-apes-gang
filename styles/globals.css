@@ -1,16 +1,281 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-a {
-  color: inherit;
+@font-face {
+  font-family: "WildWords";
+  src: url("/fonts/CC Wild Words Roman.ttf");
+}
+@font-face {
+  font-family: "Japanese";
+  src: url("/fonts/JAPANESE_2020.ttf");
+}
+@font-face {
+  font-family: "LeagueSpartan";
+  src: url("/fonts/LeagueSpartan-Bold.otf");
+}
+body{
+  background: url("/images/DAG_background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+nav{
+  font-family: "WildWords";
+  /* border: red 1px solid; */
+}
+.dag-nav-block{
+  list-style-type: none;
+  padding: 0 10px;
+  transform: skew(-25deg);
+  transition: all 0.2s ease;
+}
+.dag-nav-item{
+  color:black;
   text-decoration: none;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transform: skew(25deg);
+  white-space: nowrap;
+}
+.dag-nav-block:hover, .active{
+  cursor: pointer;
+  background: #AC3335;
+}
+.dag-nav-block:hover .dag-nav-item, .active .dag-nav-item{
+  color: white;
+}
+.dag-nav-item-disabled{
+  color: gray;
+}
+.dag-nav-item-disabled:hover .dag-nav-item{
+  color: gray;
+  background: none;
+  cursor: not-allowed;
+}
+.dag-social-item{
+  text-align: center;
+  margin: 0 -15px;
+}
+.dag_social-icon{
+  text-align: center;
+  font-size: 1.2rem;
+  color: black;
+  transition: 0.2s
+}
+.dag_social-icon:hover{
+  transition: 0.2s;
+  color: #AC3335;
+}
+.dag-nav-line{
+  border-bottom: 2px solid black;
+  margin-top: 5px;
+  width: 20vh;
+}
+.dag-social-list-1{
+  display: block;
+}
+.dag-social-list-2{
+  display: none;
 }
 
-* {
-  box-sizing: border-box;
+.main-lp{
+  /* COMMENT OUT FOR VIDEO */
+  /* background: url('/images/DAG_paper.png'); */
+  /* background-size: 100% 100vh; */
+  /* background: url('/images/DAG_hpart.png'); */
+  position: relative;
+  margin: -5rem 0;
+  height: 100vh;
+  /* background-repeat: no-repeat;
+  background-size: 100% 70vh;
+  background-position: center; */
 }
+.main-h1{
+  height: 50vh;
+  font-size: 7rem;
+  font-family: "Japanese";
+  color: #AC3335;
+   -webkit-margin-before: 0px;
+   -webkit-margin-after: 0px;
+  -webkit-text-stroke: 1px black;
+   text-shadow:
+       10px 10px 0 #000,
+     -5px -5px 0 #000,  
+      5px -5px 0 #000,
+      -5px 5px 0 #000,
+       5px 5px 0 #000;
+}
+.main-h1 span{
+  font-size: calc(17vw + .5rem);
+  z-index: 1;
+  line-height: 1;
+  margin: 0px;
+   -webkit-margin-before: 0px;
+   -webkit-margin-after: 0px;
+}
+.main-h1 span:nth-child(1){
+  margin-right: -5rem;
+}
+.main-h1 span:nth-child(3){
+  margin-left: -5rem;
+}
+.lp-ape{
+  display: block;
+  width: 40vh;
+  height: auto;
+}
+.dag-vid-mask{
+  border: 1px solid #AC3335;
+  -webkit-mask-image: url("/images/DAG_paper_mask.png");
+  mask-image: url("/images/DAG_paper.png");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;    
+  background-position: center;
+  mask-size: 100% 100vh;
+}
+.dag-vid-mask video{
+  position: fixed;
+  filter: brightness(80%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  object-fit: cover;
+}
+.dag-footer-line{
+  border-bottom: 2px solid black;
+  margin-top: 5px;
+  width: 135vh;
+}
+.dag-footer{
+  width: 100vw;
+  font-family: "WildWords";
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+.dag-menu-toggle{
+  display: none;
+  color:#000;
+}
+/* ul{
+  width: 100%;
+  border: red 1px solid;
+}
+.logo{
+  border: red 1px solid;
+} */
+
+@media (max-width: 1954px) {
+  .main-h1 span{
+    font-size: calc(20vw + 2rem);
+  }
+}
+@media (max-width: 1600px) {
+  .main-h1 span{
+    font-size: calc(24vw + 2rem);
+  }
+}
+@media (max-width: 928px) {
+  .main-h1 span{
+    margin: 14vh 0;
+  }
+}
+
+
+@media (max-width: 1700px) {
+  .dag-nav-line{
+    border-bottom: 2px solid black;
+    margin-top: 5px;
+    width: 8vh;
+  }
+}
+
+@media (max-width:1280px){
+  .dag-social-list{
+    display: none;
+  }
+  .dag-nav-line{
+    display: none;
+  }
+}
+@media (max-width: 1024px){
+  .dag-nav-line{
+    border-bottom: 2px solid black;
+    margin-top: 5px;
+    width: 0;
+  }
+  .dag-main-menu{
+    position: absolute;
+    top:5rem;
+    left:0;
+    background: url("/images/DAG_background.png");
+    padding: 5px 15px;
+    border-radius: 10px;
+    border: 3px solid black;
+  }
+  .dag-menu-toggle{
+    margin-left: 20px;
+    display: block;
+    transition: 0.2s;
+    color:#000;
+    border-radius: 10px;
+  }
+  .dag-menu-toggle:hover{
+    color:#fff;
+    transition: 0.2s;
+    background: #AC3335;
+  }
+}
+@media (max-width:768px){
+  /* .main-h1 span{
+    font-size: 12rem;
+  } */
+  /* .lp-ape{
+    width: 30vh; 
+    height: 18rem;
+  } */
+  .main-lp{
+    background-size: 100% 60vh;
+  }
+}
+@media (max-height: 860px) {
+  .main-lp{
+    background-size: 100% 70vh;
+  }
+  .dag-vid-mask{
+    mask-size: 100% 95vh;
+  }
+  /* .main-h1 span{
+    font-size: 12rem;
+  } */
+  /* .lp-ape{
+    width: 30vh; 
+    height: 18rem;
+    margin: 0 3rem;
+  } */
+}
+@media (max-width:500px){
+  /* .main-h1 span{
+    font-size: 8rem;
+  } */
+  /* .lp-ape{
+    width: 25vh; 
+    height: 15rem;
+  } */
+  .main-lp{
+    background-size: 100% 70vh; 
+  }
+  /* } REMOVE THIS FOR VIDEO */
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .dag-vid-mask video { 
+      width:auto;
+      height: 100%;
+  }
+}
+
